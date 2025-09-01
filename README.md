@@ -5,6 +5,7 @@ This repository contains **Standard Operating Procedures (SOPs)** for two widely
 
 ## Contents
 **Acunetix\_SOP.txt** → Setup & configuration steps for Acunetix (Windows & Linux).
+
 **Nessus\_SOP.txt** → Setup & configuration steps for Nessus (Windows & Linux).
 
 ---
@@ -28,12 +29,3 @@ If you’d like to contribute by adding more SOPs (e.g., Burp Suite, OpenVAS, Ni
 
 ---
 
-## 📜 License
-
-This project is shared under the **MIT License** – free to use and modify.
-
----
-
-👉 This way, your README looks clean, professional, and makes sense to anyone landing on your repo.
-
-Do you want me to **generate this README.md file** for you (like I did with the SOPs) so you can just upload it directly?
