@@ -1,75 +1,39 @@
-# Nessus SOP
+# Web Security SOPs
+This repository contains **Standard Operating Procedures (SOPs)** for two widely used vulnerability assessment tools: **Acunetix** and **Nessus**. These SOPs provide step-by-step guidance for installation, configuration, and usage during web application and infrastructure penetration testing.
 
-**Nessus Installation and Configuration:** **(WINDOWS)**
+---
 
-1. Download and Install Nessus from the official website.
-2. Run Task Manager as Administrator -> More Details -> Services -> Stop Tenable Nessus.
-3. Run Command Prompt as Administrator -> cd \Program Files\Tenable\Nessus
-    1. For Help -> nessuscli.exe --help
-4. Activate Nessus License -> nessuscli.exe fetch --register (Activation Code)
-5. Once all plugins are installed, run the following commands:
-    1. exe adduser CLA
-    2. exe password omijb007
-6. Run Task Manager as Administrator -> More Details -> Services -> Start Tenable Nessus.
-7. On Browser, go to [https://127.0.0.1:8834](https://127.0.0.1:8834/)
+## Contents
+**Acunetix\_SOP.txt** → Setup & configuration steps for Acunetix (Windows & Linux).
+**Nessus\_SOP.txt** → Setup & configuration steps for Nessus (Windows & Linux).
 
-**Nessus Installation and Configuration:** **(LINUX)**
+---
 
-1. Download and Install Nessus from official website.
-2. Go to Terminal -> cd /Downloads
-3. To Install, run-> sudo dpkg -i Nessus*.deb
-    1. If proxy required, run -> sudo /opt/nessus/sbin/nessuscli fix --secure --set proxy = IP Address
-    2. If port required, run -> sudo /opt/nessus/sbin/nessuscli fix --secure --set port = Port Number
-4. To set up Nessus, run -> sudo /opt/nessus/sbin/nessuscli (Activation Code)
-5. Once all plugins are installed, run the following commands:
-    1. nessuscli adduser CLA
-    2. nessuscli password omijb007
-6. On Browser, go to [https://127.0.0.1:8834](https://127.0.0.1:8834/)
+## Usage
+1. Download the SOP files from this repository.
+2. Follow the installation & configuration steps relevant to your OS (Windows/Linux).
+3. Use the SOPs as a quick reference during penetration testing engagements.
 
-**Set Up Nessus:** (This will be the **main file**)
+---
 
-Before performing any scanning Select the ‘Main’ Scan -> More -> Copy to My Scans. Just change the IP address with the given one.
+## Notes
+* These SOPs are meant for **educational and authorized security testing only**.
+* Always obtain **written permission** before scanning or testing any system.
+* Tools should be updated regularly to ensure the latest plugins, vulnerability checks, and features.
 
-1. Login on Nessus using username and password as above. Let the plugins get installed.
-2. Once done, go to New Scan -> Select Advanced Scan. Following are the configurations:
-    1. **Basic -> General**:
-        1. Name: Main
-        2. Target: 10.10.10.1
-    2. **Discovery -> Host Discovery:**
-        1. Ping the Remote Host (Off)
+---
 
-**Discovery -> Port Scanning:**
+## Contributions
+If you’d like to contribute by adding more SOPs (e.g., Burp Suite, OpenVAS, Nikto), feel free to fork this repo and open a pull request.
 
-1. Consider Unscanned Ports as Closed (Select)
-    1. Port Scan Range: 0-65535
-- Verify open TCP ports found by local port enumerators (Select)
-1. **Assessment -> Windows:**
-    1. Request information about SMB Domain (Select)
-    2. RID Brute Forcing (On)
+---
 
-**Assessment -> Malware:**
+## 📜 License
 
-1. Scan for malware (On)
-    1. **Report:**
-        1. Designate hosts by their DNS name (Select)
-        2. Display hosts that respond to ping (Select)
-- Display unreachable hosts (Select)
-1. **Plugins**:
-    1. Denial of Service (Disable)
+This project is shared under the **MIT License** – free to use and modify.
 
-Rest all should be kept as it is.
+---
 
-If there’s Internal Scanning mentioned, and credentials are given put them while configuring in the Credentials tab.
+👉 This way, your README looks clean, professional, and makes sense to anyone landing on your repo.
 
-For Windows -> Put Username & Password.
-
-For Linux -> Select SSH -> Authentication Method: Password -> Put Username and Password -> Elevate Privileges with su or sudo(ask the client)
-
-For External Scanning, no need to put anything in the credentials tab.
-
-**To Download Nessus Reports:**
-
-1. Go to the specific Nessus scan -> Export -> Download the Nessus file.
-2. Then go to Report and Select CSV and Generate Report.
-
-Make Folders for each project and save both the files there.
+Do you want me to **generate this README.md file** for you (like I did with the SOPs) so you can just upload it directly?
